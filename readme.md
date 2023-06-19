@@ -25,3 +25,5 @@ String Arrays:
 4. suskaiciuoti kiek butu teigiamu skaiciu suma
 
 5. suskaiciuoti koks vidurkis
+
+6. isrikiuoti users masyva pagal lyti
