@@ -11,8 +11,9 @@ const ages = [1, 2, 3, 4, 5];
 
 let total = 0;
 // ciklas
-ages.map((sk) => {
+ages.map((sk, idx) => {
   total = total + sk;
+  console.log(idx, 'total ===', total);
 });
 console.log('total ===', total);
 // gauti vidurki, total / kiek elementu
@@ -20,3 +21,26 @@ console.log('total ===', total);
 const avg = total / ages.length;
 
 console.log('avg ===', avg.toFixed(2));
+
+// reduce
+
+// array.reduce((total, currentValue, currentIndex, arr) => {}, initialValue)
+const ages1 = [1, 2, 3];
+//          1/3 + 2/3 + 3/3
+const agesTotal = ages.reduce((total, sk, idx) => {
+  console.log(`ciklas: ${idx}, sk: ${sk}, total: ${total}`);
+  // ka grazins sita funkcija tas gryz i kito ciklo total
+  const miniSuma = total + sk;
+  return miniSuma;
+}, 0);
+
+const agesTotalShorter = ages.reduce((total, sk, idx) => total + sk, 0);
+
+console.log('agesTotal ===', agesTotal);
+console.log('agesTotalShorter ===', agesTotalShorter);
+
+const agesAvgShorter = ages.reduce(
+  (total, sk, idx, arr) => total + sk / arr.length,
+  0
+);
+console.log('agesAvgShorter ===', agesAvgShorter);
